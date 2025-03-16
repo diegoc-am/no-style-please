@@ -6,5 +6,4 @@
 .sass-cache
 _site
 vendor
-Gemfile.lock
 .jektex-cache
