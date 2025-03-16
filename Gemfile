@@ -10,3 +10,6 @@ gem "base64"
 gem "logger"
 
 gemspec
+gem "execjs", "~> 2.10"
+
+gem "mini_racer", "~> 0.18.0"
