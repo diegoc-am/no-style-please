@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  nostyleplease:
+    image: nostyleplease
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - JEKYLL_ENV=production
+    ports:
+      - 4000:4000
