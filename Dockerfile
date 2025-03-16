@@ -2,10 +2,11 @@ FROM ruby:slim
 
 EXPOSE 4000
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update 
+RUN apt-get install -y --no-install-recommends \
     build-essential \
-    git \
-    && rm -rf /var/lib/apt/lists/*
+    git
+RUN rm -rf /var/lib/apt/lists/*
 
 RUN gem update --system && gem install bundler
 
@@ -15,7 +16,7 @@ RUN bundle config --global frozen 1
 WORKDIR /app
 COPY . /app
 
-COPY Gemfile Gemfile.lock no-style-please.gemspec ./
+COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
 CMD ["bundle", "exec", "jekyll", "serve"]
